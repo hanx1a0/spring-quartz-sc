@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <context:component-scan base-package="com.peanut.service"/>
+
+    <bean id="startQuertz" lazy-init="false" autowire="no" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <!--将已经初始化好的触发器交给调度器工厂管理-->
+        <property name="triggers">
+            <list>
+                <ref bean="taskTrigger1"/>
+                <ref bean="taskTrigger2"/>
+                <ref bean="taskTrigger3"/>
+                <ref bean="taskTrigger4"/>
+                <ref bean="taskTrigger5"/>
+                <ref bean="taskTrigger6"/>
+                <ref bean="taskTrigger7"/>
+                <ref bean="taskTrigger8"/>
+                <ref bean="taskTrigger9"/>
+                <ref bean="taskTrigger10"/>
+                <ref bean="taskTrigger11"/>
+                <ref bean="taskTrigger12"/>
+                <ref bean="taskTrigger13"/>
+                <ref bean="taskTrigger14"/>
+                <ref bean="taskTrigger15"/>
+            </list>
+        </property>
+    </bean>
+
+    <!--以下初始化了将要运行的12个触发器，以及执行时间（10秒一次） 待执行方法-->
+    <bean id="taskTrigger1"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="taskMethod1" />
+        <property name="cronExpression"  value="0/10 * * * * ?"/>
+    </bean>
+    <bean id="taskMethod1" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="taskService" />
+        <property name="targetMethod" value="method1" />
+    </bean>
+
+    <bean id="taskTrigger2"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="taskMethod2" />
+        <property name="cronExpression"  value="0/10 * * * * ?"/>
+    </bean>
+    <bean id="taskMethod2" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="taskService" />
+        <property name="targetMethod" value="method2" />
+    </bean>
+
+    <bean id="taskTrigger3"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="taskMethod3" />
+        <property name="cronExpression"  value="0/10 * * * * ?"/>
+    </bean>
+    <bean id="taskMethod3" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="taskService" />
+        <property name="targetMethod" value="method3" />
+    </bean>
+
+    <bean id="taskTrigger4"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="taskMethod4" />
+        <property name="cronExpression"  value="0/10 * * * * ?"/>
+    </bean>
+    <bean id="taskMethod4" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="taskService" />
+        <property name="targetMethod" value="method4" />
+    </bean>
+
+    <bean id="taskTrigger5"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="taskMethod5" />
+        <property name="cronExpression"  value="0/10 * * * * ?"/>
+    </bean>
+    <bean id="taskMethod5" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="taskService" />
+        <property name="targetMethod" value="method5" />
+    </bean>
+
+    <bean id="taskTrigger6"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="taskMethod6" />
+        <property name="cronExpression"  value="0/10 * * * * ?"/>
+    </bean>
+    <bean id="taskMethod6" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="taskService" />
+        <property name="targetMethod" value="method6" />
+    </bean>
+
+    <bean id="taskTrigger7"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="taskMethod7" />
+        <property name="cronExpression"  value="0/10 * * * * ?"/>
+    </bean>
+    <bean id="taskMethod7" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="taskService" />
+        <property name="targetMethod" value="method7" />
+    </bean>
+
+    <bean id="taskTrigger8"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="taskMethod8" />
+        <property name="cronExpression"  value="0/10 * * * * ?"/>
+    </bean>
+    <bean id="taskMethod8" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="taskService" />
+        <property name="targetMethod" value="method8" />
+    </bean>
+
+    <bean id="taskTrigger9"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="taskMethod9" />
+        <property name="cronExpression"  value="0/10 * * * * ?"/>
+    </bean>
+    <bean id="taskMethod9" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="taskService" />
+        <property name="targetMethod" value="method9" />
+    </bean>
+
+    <bean id="taskTrigger10"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="taskMethod10" />
+        <property name="cronExpression"  value="0/10 * * * * ?"/>
+    </bean>
+    <bean id="taskMethod10" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="taskService" />
+        <property name="targetMethod" value="method10" />
+    </bean>
+
+    <bean id="taskTrigger11"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="taskMethod11" />
+        <property name="cronExpression"  value="0/11 * * * * ?"/>
+    </bean>
+    <bean id="taskMethod11" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="taskService" />
+        <property name="targetMethod" value="method11" />
+    </bean>
+
+    <bean id="taskTrigger12"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="taskMethod12" />
+        <property name="cronExpression"  value="0/10 * * * * ?"/>
+    </bean>
+    <bean id="taskMethod12" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="taskService" />
+        <property name="targetMethod" value="method12" />
+    </bean>
+
+    <bean id="taskTrigger13"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="taskMethod13" />
+        <property name="cronExpression"  value="0/10 * * * * ?"/>
+    </bean>
+    <bean id="taskMethod13" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="taskService" />
+        <property name="targetMethod" value="method13" />
+    </bean>
+
+    <bean id="taskTrigger14"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="taskMethod14" />
+        <property name="cronExpression"  value="0/10 * * * * ?"/>
+    </bean>
+    <bean id="taskMethod14" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="taskService" />
+        <property name="targetMethod" value="method14" />
+    </bean>
+
+    <bean id="taskTrigger15"  class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+        <property name="jobDetail" ref="taskMethod15" />
+        <property name="cronExpression"  value="0/10 * * * * ?"/>
+    </bean>
+    <bean id="taskMethod15" class="org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean">
+        <property name="targetObject" ref="taskService" />
+        <property name="targetMethod" value="method15" />
+    </bean>
+
+</beans>
