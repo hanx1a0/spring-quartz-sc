@@ -1,6 +1,6 @@
-package com.peanut.test;
+package com.peanut.quartz.test;
 
-import com.peanut.service.TaskService;
+import com.peanut.quartz.service.TaskService;
 import junit.framework.TestCase;
 import org.junit.Test;
 import org.junit.runner.RunWith;

@@ -1,4 +1,4 @@
-package com.peanut.service;
+package com.peanut.quartz.service;
 
 import org.springframework.stereotype.Component;
 
